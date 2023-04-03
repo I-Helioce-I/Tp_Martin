@@ -19,17 +19,27 @@ public class PlayerController : MonoBehaviour
 
     Animator animator;
 
+    bool canMove;
+    bool camMovement;
+
     private void Start()
     {
         animator = GetComponentInChildren<Animator>();
+        canMove = true;
+        camMovement = true;
     }
 
     private void Update()
     {
-        Move();
-
-        if (Input.GetKeyDown(KeyCode.A))
+        if (canMove)
         {
+            Move();
+
+        }
+
+        if (Input.GetKeyDown(KeyCode.A) && camMovement)
+        {
+            StartCoroutine(CamMoving());
             camSelected--;
 
 
@@ -41,8 +51,9 @@ public class PlayerController : MonoBehaviour
             }
             ActiveCamera();
         }
-        else if (Input.GetKeyDown(KeyCode.E))
+        else if (Input.GetKeyDown(KeyCode.E) && camMovement)
         {
+            StartCoroutine(CamMoving());
             camSelected++;
 
             transform.localRotation = transform.localRotation * Quaternion.Euler(0, -90, 0);
@@ -55,6 +66,14 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    IEnumerator CamMoving()
+    {
+        canMove = false;
+        camMovement = false;
+        yield return new WaitForSeconds(2);
+        camMovement = true;
+        canMove = true;
+    }
     private void ActiveCamera()
     {
 
@@ -75,18 +94,18 @@ public class PlayerController : MonoBehaviour
             {
                 animator.SetFloat("Speed", horizontalInput);
             }
-            else if(horizontalInput < 0)
+            else if (horizontalInput < 0)
             {
                 animator.SetFloat("Speed", -horizontalInput);
             }
         }
-        if(verticalInput != 0)
+        if (verticalInput != 0)
         {
-            if(verticalInput > 0)
+            if (verticalInput > 0)
             {
                 animator.SetFloat("Speed", verticalInput);
             }
-            else if(verticalInput < 0)
+            else if (verticalInput < 0)
             {
                 animator.SetFloat("Speed", -verticalInput);
             }

@@ -4,19 +4,22 @@ using UnityEngine;
 
 public class KeyInteract : MonoBehaviour, IInteract
 {
+    [SerializeField]
+    GameObject doorToOpen;
+
     public string GetInteractText()
     {
-        throw new System.NotImplementedException();
+        return "Get Key";
     }
 
     public Transform GetTransform()
     {
-        throw new System.NotImplementedException();
+        return transform;
     }
 
     public void Interact(Transform interactorTransform)
     {
-        throw new System.NotImplementedException();
+        Destroy(gameObject);
     }
 
     // Start is called before the first frame update
