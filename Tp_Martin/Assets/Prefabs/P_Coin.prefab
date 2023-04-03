@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3393906269332654119}
   - component: {fileID: 3393906269332654118}
   - component: {fileID: 1412005472406447900}
+  - component: {fileID: 1239035881913608322}
   m_Layer: 0
   m_Name: P_Coin
   m_TagString: Untagged
@@ -92,8 +93,21 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3393906269332654117}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.0025622305, y: 0.00052189257, z: 0.002958608}
   m_Center: {x: 0, y: 1.4551912e-11, z: 0}
+--- !u!114 &1239035881913608322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3393906269332654117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4891ef251bbd3a54688a3b3e66914dad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  value: 1

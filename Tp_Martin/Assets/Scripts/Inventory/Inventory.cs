@@ -28,6 +28,6 @@ public class Inventory : MonoBehaviour
 
     private void UpdateCoinUI()
     {
-        amount.text = coin.ToString() + " / " + GameManager.Instance.maxBatteryInGame;
+        amount.text = coin.ToString() + " / " + GameManager.Instance.maxBatteryInGame.ToString();
     }
 }
