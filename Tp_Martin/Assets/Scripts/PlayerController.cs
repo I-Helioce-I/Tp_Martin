@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
             camSelected--;
 
 
-            transform.rotation = transform.rotation * Quaternion.Euler(0, -90, 0);
+            transform.rotation = transform.rotation * Quaternion.Euler(0, +90, 0);
 
             if (camSelected <= 0)
             {
@@ -38,7 +38,7 @@ public class PlayerController : MonoBehaviour
         {
             camSelected++;
 
-            transform.rotation = transform.rotation * Quaternion.Euler(0, 90, 0);
+            transform.localRotation = transform.localRotation * Quaternion.Euler(0, -90, 0);
 
             if (camSelected >3)
             {
@@ -62,11 +62,22 @@ public class PlayerController : MonoBehaviour
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
 
-        Vector3 moveDirection = new Vector3(horizontalInput, 0, verticalInput);
-
-
-        transform.position += moveDirection * speed * Time.deltaTime;
-
+        if (Input.GetKey(KeyCode.Z))
+        {
+            transform.position += transform.forward * speed * Time.deltaTime;
+        }
+        if (Input.GetKey(KeyCode.S))
+        {
+            transform.position += -transform.forward * speed * Time.deltaTime;
+        }
+        if (Input.GetKey(KeyCode.Q))
+        {
+            transform.position += -transform.right * speed * Time.deltaTime;
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            transform.position += transform.right * speed * Time.deltaTime;
+        }
     }
 
 
