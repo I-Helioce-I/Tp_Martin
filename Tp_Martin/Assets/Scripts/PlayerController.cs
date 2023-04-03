@@ -25,7 +25,10 @@ public class PlayerController : MonoBehaviour
         {
             camSelected--;
 
-            if(camSelected <= 0)
+
+            transform.rotation = transform.rotation * Quaternion.Euler(0, -90, 0);
+
+            if (camSelected <= 0)
             {
                 camSelected = 3;
             }
@@ -34,6 +37,8 @@ public class PlayerController : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.E))
         {
             camSelected++;
+
+            transform.rotation = transform.rotation * Quaternion.Euler(0, 90, 0);
 
             if (camSelected >3)
             {
@@ -59,7 +64,6 @@ public class PlayerController : MonoBehaviour
 
         Vector3 moveDirection = new Vector3(horizontalInput, 0, verticalInput);
 
-        Debug.Log(moveDirection);
 
         transform.position += moveDirection * speed * Time.deltaTime;
 
