@@ -17,6 +17,13 @@ public class PlayerController : MonoBehaviour
     float horizontalInput;
     float verticalInput;
 
+    Animator animator;
+
+    private void Start()
+    {
+        animator = GetComponentInChildren<Animator>();
+    }
+
     private void Update()
     {
         Move();
@@ -32,7 +39,7 @@ public class PlayerController : MonoBehaviour
             {
                 camSelected = 3;
             }
-                ActiveCamera();
+            ActiveCamera();
         }
         else if (Input.GetKeyDown(KeyCode.E))
         {
@@ -40,17 +47,17 @@ public class PlayerController : MonoBehaviour
 
             transform.localRotation = transform.localRotation * Quaternion.Euler(0, -90, 0);
 
-            if (camSelected >3)
+            if (camSelected > 3)
             {
                 camSelected = 0;
             }
-                ActiveCamera();
+            ActiveCamera();
         }
     }
 
     private void ActiveCamera()
     {
-        
+
         foreach (GameObject cam in cams)
         {
             cam.SetActive(false);
@@ -61,6 +68,33 @@ public class PlayerController : MonoBehaviour
     {
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
+
+        if (horizontalInput != 0)
+        {
+            if (horizontalInput > 0)
+            {
+                animator.SetFloat("Speed", horizontalInput);
+            }
+            else if(horizontalInput < 0)
+            {
+                animator.SetFloat("Speed", -horizontalInput);
+            }
+        }
+        if(verticalInput != 0)
+        {
+            if(verticalInput > 0)
+            {
+                animator.SetFloat("Speed", verticalInput);
+            }
+            else if(verticalInput < 0)
+            {
+                animator.SetFloat("Speed", -verticalInput);
+            }
+        }
+        else
+        {
+            animator.SetFloat("Speed", 0);
+        }
 
         if (Input.GetKey(KeyCode.Z))
         {
