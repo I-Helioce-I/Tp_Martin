@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 6593801999132063264}
   - component: {fileID: 6593801999132063267}
   - component: {fileID: 6593801999132063266}
+  - component: {fileID: 380179948}
+  - component: {fileID: 380179949}
   m_Layer: 0
   m_Name: brick wall with door
   m_TagString: Untagged
@@ -86,6 +88,32 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &380179948
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6593801999132063269}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.021012291, y: 0.007309324, z: 0.030649122}
+  m_Center: {x: -0.052686628, y: 0.000008197427, z: 0.01532457}
+--- !u!65 &380179949
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6593801999132063269}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.020924782, y: 0.007309324, z: 0.031151704}
+  m_Center: {x: -0.01046242, y: 0.000008197427, z: 0.015575858}
 --- !u!1 &6593802000770708314
 GameObject:
   m_ObjectHideFlags: 0
@@ -98,6 +126,7 @@ GameObject:
   - component: {fileID: 6593802000770708312}
   - component: {fileID: 6593802000770708315}
   - component: {fileID: 1083167623}
+  - component: {fileID: 869055299}
   m_Layer: 0
   m_Name: door.002
   m_TagString: Untagged
@@ -193,3 +222,16 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!65 &869055299
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6593802000770708314}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.021247717, y: 0.003704693, z: 0.028462779}
+  m_Center: {x: -0.0098626735, y: 0.00040794935, z: 0.0024427723}
