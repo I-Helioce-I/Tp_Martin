@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 728248212636934586}
   - component: {fileID: 728248212636934587}
   - component: {fileID: 728248212636934588}
+  - component: {fileID: 6329250974456614845}
   m_Layer: 0
   m_Name: P_TileChoco
   m_TagString: Untagged
@@ -84,3 +85,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &6329250974456614845
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 728248212636934589}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.021061897, y: 0.021061998, z: 0.0024438007}
+  m_Center: {x: -0.010530949, y: -0.010530999, z: -0.00077809935}

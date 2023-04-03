@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8215945695824855073}
   - component: {fileID: 8215945695824855072}
   - component: {fileID: 8215945695824855087}
+  - component: {fileID: 7928571137877481944}
   m_Layer: 0
   m_Name: P_Rock3
   m_TagString: Untagged
@@ -83,3 +84,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &7928571137877481944
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8215945695824855086}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.020330667, y: 0.012876135, z: 0.010343902}
+  m_Center: {x: -0.00026846118, y: -0.0008200764, z: 0.0046348935}

@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 22655595092848544}
   - component: {fileID: 22655595092848558}
   - component: {fileID: 22655595092848545}
+  - component: {fileID: 6432538988143351662}
+  - component: {fileID: 1401176527338986701}
   m_Layer: 0
   m_Name: P_WallHole
   m_TagString: Untagged
@@ -85,3 +87,29 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &6432538988143351662
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 22655595092848547}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.022049407, y: 0.0085541755, z: 0.035353046}
+  m_Center: {x: -0.011024694, y: -0.00061423035, z: 0.017676514}
+--- !u!65 &1401176527338986701
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 22655595092848547}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: -0.02, y: 0.0073093167, z: 0.035353046}
+  m_Center: {x: -0.052, y: 0.000008202109, z: 0.017676516}

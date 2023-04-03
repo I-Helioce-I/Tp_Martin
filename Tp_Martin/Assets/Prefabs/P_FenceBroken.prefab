@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6308874459485434670}
   - component: {fileID: 6308874459485434665}
   - component: {fileID: 6308874459485434664}
+  - component: {fileID: 8373703941626176426}
   m_Layer: 0
   m_Name: P_FenceBroken
   m_TagString: Untagged
@@ -83,3 +84,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &8373703941626176426
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6308874459485434667}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.023195354, y: 0.0044285296, z: 0.010618786}
+  m_Center: {x: -0.011597677, y: 0.00042133933, z: 0.0052952315}
