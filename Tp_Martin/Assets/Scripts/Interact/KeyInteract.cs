@@ -19,6 +19,7 @@ public class KeyInteract : MonoBehaviour, IInteract
 
     public void Interact(Transform interactorTransform)
     {
+        doorToOpen.GetComponent<Animator>().SetBool("OpenDoor", true);
         Destroy(gameObject);
     }
 
