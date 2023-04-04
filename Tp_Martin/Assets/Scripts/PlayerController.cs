@@ -79,7 +79,7 @@ public class PlayerController : MonoBehaviour
     {
         canMove = false;
         camMovement = false;
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
         camMovement = true;
         canMove = true;
     }

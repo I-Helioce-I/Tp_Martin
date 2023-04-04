@@ -28,7 +28,6 @@ public class UIManager : MonoBehaviour
 
     public void Start()
     {
-        SetTutoText("Use ZQSD to move around bitch");
     }
 
     public void SetTutoText(string textToDisplay)
