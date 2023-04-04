@@ -17,7 +17,7 @@ MonoBehaviour:
     m_To: Cam2
     m_Blend:
       m_Style: 1
-      m_Time: 2
+      m_Time: 1
       m_CustomCurve:
         serializedVersion: 2
         m_Curve:
@@ -46,7 +46,7 @@ MonoBehaviour:
     m_To: Cam1
     m_Blend:
       m_Style: 1
-      m_Time: 2
+      m_Time: 1
       m_CustomCurve:
         serializedVersion: 2
         m_Curve:
@@ -83,8 +83,8 @@ MonoBehaviour:
   - m_From: Cam2
     m_To: Cam3
     m_Blend:
-      m_Style: 3
-      m_Time: 2
+      m_Style: 1
+      m_Time: 1
       m_CustomCurve:
         serializedVersion: 2
         m_Curve: []
@@ -94,8 +94,8 @@ MonoBehaviour:
   - m_From: Cam3
     m_To: Cam2
     m_Blend:
-      m_Style: 3
-      m_Time: 2
+      m_Style: 1
+      m_Time: 1
       m_CustomCurve:
         serializedVersion: 2
         m_Curve: []
@@ -105,8 +105,8 @@ MonoBehaviour:
   - m_From: Cam3
     m_To: Cam4
     m_Blend:
-      m_Style: 3
-      m_Time: 2
+      m_Style: 1
+      m_Time: 1
       m_CustomCurve:
         serializedVersion: 2
         m_Curve: []
@@ -116,8 +116,8 @@ MonoBehaviour:
   - m_From: Cam4
     m_To: Cam3
     m_Blend:
-      m_Style: 3
-      m_Time: 2
+      m_Style: 1
+      m_Time: 1
       m_CustomCurve:
         serializedVersion: 2
         m_Curve: []
@@ -127,8 +127,8 @@ MonoBehaviour:
   - m_From: Cam4
     m_To: Cam1
     m_Blend:
-      m_Style: 3
-      m_Time: 2
+      m_Style: 1
+      m_Time: 1
       m_CustomCurve:
         serializedVersion: 2
         m_Curve: []
@@ -138,8 +138,8 @@ MonoBehaviour:
   - m_From: Cam1
     m_To: Cam4
     m_Blend:
-      m_Style: 3
-      m_Time: 2
+      m_Style: 1
+      m_Time: 1
       m_CustomCurve:
         serializedVersion: 2
         m_Curve: []

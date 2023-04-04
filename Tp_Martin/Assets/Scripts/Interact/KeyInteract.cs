@@ -7,6 +7,9 @@ public class KeyInteract : MonoBehaviour, IInteract
     [SerializeField]
     GameObject doorToOpen;
 
+    [SerializeField]
+    ActivateMovementElement nextZone;
+
     public string GetInteractText()
     {
         return "Get Key";
@@ -20,6 +23,13 @@ public class KeyInteract : MonoBehaviour, IInteract
     public void Interact(Transform interactorTransform)
     {
         doorToOpen.GetComponent<Animator>().SetBool("OpenDoor", true);
+
+        if(nextZone != null)
+        {
+            nextZone.gameObject.SetActive(true);
+            nextZone.enabled = true;
+        }
+
         Destroy(gameObject);
     }
 
