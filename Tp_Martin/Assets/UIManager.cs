@@ -28,19 +28,20 @@ public class UIManager : MonoBehaviour
 
     public void Start()
     {
+        SetTutoText("Use ZQSD to move around", 7);
     }
 
-    public void SetTutoText(string textToDisplay)
+    public void SetTutoText(string textToDisplay, float timer)
     {
         
         tutoText.text = textToDisplay;
         tutoText.gameObject.SetActive(true);
-        StartCoroutine(ShowText());
+        StartCoroutine(ShowText(timer));
     }
 
-    IEnumerator ShowText()
+    IEnumerator ShowText(float timer)
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(timer);
         tutoText.gameObject.SetActive(false);
 
     }

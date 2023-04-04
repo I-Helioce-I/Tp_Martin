@@ -6,12 +6,14 @@ public class DialogueTrigger : MonoBehaviour
 {
     [SerializeField]
     string textToDisplay;
+    [SerializeField]
+    float timer;
 
     private void OnTriggerEnter(Collider other)
     {
         if(other.transform.parent.TryGetComponent(out PlayerController playerController))
         {
-            UIManager.Instance.SetTutoText(textToDisplay);
+            UIManager.Instance.SetTutoText(textToDisplay, timer);
             Destroy(gameObject);
         }
     }

@@ -51,7 +51,7 @@ public class PlayerController : MonoBehaviour
 
             transform.rotation = transform.rotation * Quaternion.Euler(0, +90, 0);
 
-            if (camSelected <= 0)
+            if (camSelected < 0)
             {
                 camSelected = 3;
             }
@@ -105,12 +105,12 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Z))
         {
-            body.transform.rotation = Quaternion.Slerp(body.transform.rotation, Quaternion.LookRotation(camActive.transform.forward), 0.15f);
-            
+            body.transform.rotation = Quaternion.Slerp(body.transform.rotation, Quaternion.LookRotation(new Vector3(camActive.transform.forward.x,0, camActive.transform.forward.z)), 0.15f);
+            Debug.Log(camActive.transform.forward);
         }
         if (Input.GetKey(KeyCode.S))
         {
-            body.transform.rotation = Quaternion.Slerp(body.transform.rotation, Quaternion.LookRotation(-camActive.transform.forward), 0.15f);
+            body.transform.rotation = Quaternion.Slerp(body.transform.rotation, Quaternion.LookRotation(new Vector3(-camActive.transform.forward.x, 0, -camActive.transform.forward.z)), 0.15f);
         }
         if (Input.GetKey(KeyCode.Q))
         {

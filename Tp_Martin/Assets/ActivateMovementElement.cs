@@ -5,7 +5,7 @@ using UnityEngine;
 public class ActivateMovementElement : MonoBehaviour
 {
     [SerializeField]
-    GameObject[] levelElements;
+    public GameObject[] levelElements;
 
     bool inPlace = false;
 
