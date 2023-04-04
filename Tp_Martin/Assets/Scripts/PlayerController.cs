@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     float speed;
 
     [SerializeField]
-    GameObject[] cams;
+    public GameObject[] cams;
     [SerializeField]
     int camSelected;
     GameObject camActive;
@@ -106,7 +106,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.Z))
         {
             body.transform.rotation = Quaternion.Slerp(body.transform.rotation, Quaternion.LookRotation(new Vector3(camActive.transform.forward.x,0, camActive.transform.forward.z)), 0.15f);
-            Debug.Log(camActive.transform.forward);
+            
         }
         if (Input.GetKey(KeyCode.S))
         {

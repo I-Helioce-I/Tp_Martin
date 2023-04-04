@@ -22,14 +22,14 @@ public class KeyInteract : MonoBehaviour, IInteract
 
     public void Interact(Transform interactorTransform)
     {
-        doorToOpen.GetComponent<Animator>().SetBool("OpenDoor", true);
-
+            
         if(nextZone != null)
         {
             nextZone.gameObject.SetActive(true);
             nextZone.enabled = true;
         }
 
+        doorToOpen.GetComponent<Animator>().SetBool("OpenDoor", true);
         Destroy(gameObject);
     }
 
