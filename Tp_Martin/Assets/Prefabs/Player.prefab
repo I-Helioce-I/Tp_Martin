@@ -48,13 +48,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d5be9dbf43953f4383465c2c875dba3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 3
   cams:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   camSelected: 0
+  body: {fileID: 7315377490335190305}
 --- !u!114 &5100562612729874556
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -68,6 +69,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coin: 0
+  amount: {fileID: 0}
 --- !u!114 &393594105
 MonoBehaviour:
   m_ObjectHideFlags: 0

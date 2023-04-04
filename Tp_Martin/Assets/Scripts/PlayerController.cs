@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
@@ -13,11 +14,13 @@ public class PlayerController : MonoBehaviour
     GameObject[] cams;
     [SerializeField]
     int camSelected;
+    GameObject camActive;
 
-    float horizontalInput;
-    float verticalInput;
+    [SerializeField]
+    GameObject body;
 
     Animator animator;
+    Rigidbody rb;
 
     bool canMove;
     bool camMovement;
@@ -25,8 +28,12 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         animator = GetComponentInChildren<Animator>();
+        rb = GetComponent<Rigidbody>();
         canMove = true;
         camMovement = true;
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     private void Update()
@@ -34,7 +41,6 @@ public class PlayerController : MonoBehaviour
         if (canMove)
         {
             Move();
-
         }
 
         if (Input.GetKeyDown(KeyCode.A) && camMovement)
@@ -64,6 +70,9 @@ public class PlayerController : MonoBehaviour
             }
             ActiveCamera();
         }
+
+        camActive = cams[camSelected];
+
     }
 
     IEnumerator CamMoving()
@@ -76,7 +85,6 @@ public class PlayerController : MonoBehaviour
     }
     private void ActiveCamera()
     {
-
         foreach (GameObject cam in cams)
         {
             cam.SetActive(false);
@@ -85,52 +93,32 @@ public class PlayerController : MonoBehaviour
     }
     private void Move()
     {
-        horizontalInput = Input.GetAxis("Horizontal");
-        verticalInput = Input.GetAxis("Vertical");
 
-        if (horizontalInput != 0)
-        {
-            if (horizontalInput > 0)
-            {
-                animator.SetFloat("Speed", horizontalInput);
-            }
-            else if (horizontalInput < 0)
-            {
-                animator.SetFloat("Speed", -horizontalInput);
-            }
-        }
-        if (verticalInput != 0)
-        {
-            if (verticalInput > 0)
-            {
-                animator.SetFloat("Speed", verticalInput);
-            }
-            else if (verticalInput < 0)
-            {
-                animator.SetFloat("Speed", -verticalInput);
-            }
-        }
-        else
-        {
-            animator.SetFloat("Speed", 0);
-        }
+        Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+
+        transform.Translate(move * speed * Time.deltaTime, Space.Self);
+
+        float moveAmount = Mathf.Clamp01(Mathf.Abs(move.x) + Mathf.Abs(move.z));
+
+        animator.SetFloat("Speed", moveAmount);
+
 
         if (Input.GetKey(KeyCode.Z))
         {
-            transform.position += transform.forward * speed * Time.deltaTime;
+            body.transform.rotation = Quaternion.Slerp(body.transform.rotation, Quaternion.LookRotation(camActive.transform.forward), 0.15f);
+            
         }
         if (Input.GetKey(KeyCode.S))
         {
-            transform.position += -transform.forward * speed * Time.deltaTime;
-            
+            body.transform.rotation = Quaternion.Slerp(body.transform.rotation, Quaternion.LookRotation(-camActive.transform.forward), 0.15f);
         }
         if (Input.GetKey(KeyCode.Q))
         {
-            transform.position += -transform.right * speed * Time.deltaTime;
+            body.transform.rotation = Quaternion.Slerp(body.transform.rotation, Quaternion.LookRotation(-camActive.transform.right), 0.15f);
         }
         if (Input.GetKey(KeyCode.D))
         {
-            transform.position += transform.right * speed * Time.deltaTime;
+            body.transform.rotation = Quaternion.Slerp(body.transform.rotation, Quaternion.LookRotation(camActive.transform.right), 0.15f);
         }
     }
 
